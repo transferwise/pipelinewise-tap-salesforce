@@ -1,27 +1,43 @@
-# tap-salesforce
+# pipelinewise-tap-salesforce
 
-[![PyPI version](https://badge.fury.io/py/tap-mysql.svg)](https://badge.fury.io/py/tap-salesforce)
-[![CircleCI Build Status](https://circleci.com/gh/singer-io/tap-salesforce.png)](https://circleci.com/gh/singer-io/tap-salesforce.png)
+[![PyPI version](https://badge.fury.io/py/pipelinewise-tap-salesforce.svg)](https://badge.fury.io/py/pipelinewise-tap-salesforce)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pipelinewise-tap-salesforce.svg)](https://pypi.org/project/pipelinewise-tap-salesforce/)
+[![License: MIT](https://img.shields.io/badge/License-GPLv3-yellow.svg)](https://opensource.org/licenses/GPL-3.0)
+
+[Singer](https://www.singer.io/) tap that extracts data from [Salesforce](https://www.salesforce.com/) and produces JSON-formatted output following the [Singer spec](https://github.com/singer-io/getting-started/blob/master/docs/SPEC.md).
+
+This is a [PipelineWise](https://transferwise.github.io/pipelinewise) compatible tap connector.
+
+## How to use it
+
+The recommended method of running this tap is to use it from [PipelineWise](https://transferwise.github.io/pipelinewise). When running it from PipelineWise you don't need to configure this tap with JSON files and most of things are automated. Please check the related documentation at [Tap Salesforce](https://transferwise.github.io/pipelinewise/connectors/taps/salesforce.html)
+
+If you want to run this [Singer Tap](https://singer.io) independently please read further.
+
+### Install and Run
+
+First, make sure Python 3 is installed on your system or follow these
+installation instructions for [Mac](http://docs.python-guide.org/en/latest/starting/install3/osx/) or
+[Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-ubuntu-16-04).
 
 
-[Singer](https://www.singer.io/) tap that extracts data from a [Salesforce](https://www.salesforce.com/) database and produces JSON-formatted data following the [Singer spec](https://github.com/singer-io/getting-started/blob/master/SPEC.md).
+It's recommended to use a virtualenv:
 
 ```bash
-$ mkvirtualenv -p python3 tap-salesforce
-$ pip install tap-salesforce
-$ tap-salesforce --config config.json --discover
-$ tap-salesforce --config config.json --properties properties.json --state state.json
+  python3 -m venv venv
+  pip install pipelinewise-tap-salesforce
 ```
 
-# Quickstart
+or
 
-## Install the tap
-
+```bash
+  python3 -m venv venv
+  . venv/bin/activate
+  pip install --upgrade pip
+  pip install .
 ```
-> pip install tap-salesforce
-```
 
-## Create a Config file
+### Create a Config file
 
 ```
 {
@@ -56,4 +72,6 @@ To sync data, select fields in the `properties.json` output and run the tap.
 > tap-salesforce --config config.json --properties properties.json [--state state.json]
 ```
 
-Copyright &copy; 2017 Stitch
+---
+
+Based on Stitch documentation
