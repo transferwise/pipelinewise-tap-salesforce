@@ -2,11 +2,11 @@
 
 from setuptools import setup
 
-setup(name='tap-salesforce',
-      version='1.4.24',
-      description='Singer.io tap for extracting data from the Salesforce API',
+setup(name='pipelinewise-tap-salesforce',
+      version='1.0.0',
+      description='Singer.io tap for extracting data from the Salesforce API - PipelineWise compatible',
       author='Stitch',
-      url='https://singer.io',
+      url='https://github.com/transferwise/pipelinewise-tap-salesforce',
       classifiers=['Programming Language :: Python :: 3 :: Only'],
       py_modules=['tap_salesforce'],
       install_requires=[
