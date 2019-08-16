@@ -12,7 +12,10 @@ setup(name='pipelinewise-tap-salesforce',
       long_description_content_type='text/markdown',  # This is important!
       author='Stitch',
       url='https://github.com/transferwise/pipelinewise-tap-salesforce',
-      classifiers=['Programming Language :: Python :: 3 :: Only'],
+      classifiers=[
+          'License :: OSI Approved :: GNU Affero General Public License v3',
+          'Programming Language :: Python :: 3 :: Only'
+      ],
       py_modules=['tap_salesforce'],
       install_requires=[
           'requests==2.20.0',
