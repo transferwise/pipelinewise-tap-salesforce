@@ -14,7 +14,7 @@ from tap_salesforce.salesforce.exceptions import (
     TapSalesforceException,
     TapSalesforceQuotaExceededException)
 
-LOGGER = singer.get_logger()
+LOGGER = singer.get_logger('tap_salesforce')
 
 # The minimum expiration setting for SF Refresh Tokens is 15 minutes
 REFRESH_TOKEN_EXPIRATION_PERIOD = 900

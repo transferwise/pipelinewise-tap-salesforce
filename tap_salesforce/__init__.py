@@ -11,7 +11,7 @@ from tap_salesforce.salesforce import Salesforce
 from tap_salesforce.salesforce.exceptions import (
     TapSalesforceException, TapSalesforceQuotaExceededException)
 
-LOGGER = singer.get_logger()
+LOGGER = singer.get_logger('tap_salesforce')
 
 REQUIRED_CONFIG_KEYS = ['refresh_token',
                         'client_id',

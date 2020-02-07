@@ -18,7 +18,7 @@ PK_CHUNKED_BATCH_STATUS_POLLING_SLEEP = 60
 ITER_CHUNK_SIZE = 1024
 DEFAULT_CHUNK_SIZE = 50000
 
-LOGGER = singer.get_logger()
+LOGGER = singer.get_logger('tap_salesforce')
 
 # pylint: disable=inconsistent-return-statements
 def find_parent(stream):

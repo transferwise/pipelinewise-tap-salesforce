@@ -4,7 +4,7 @@ import singer.utils as singer_utils
 from requests.exceptions import HTTPError
 from tap_salesforce.salesforce.exceptions import TapSalesforceException
 
-LOGGER = singer.get_logger()
+LOGGER = singer.get_logger('tap_salesforce')
 
 MAX_RETRIES = 4
 
