@@ -5,7 +5,7 @@ from singer import Transformer, metadata, metrics
 from requests.exceptions import RequestException
 from tap_salesforce.salesforce.bulk import Bulk
 
-LOGGER = singer.get_logger()
+LOGGER = singer.get_logger('tap_salesforce')
 
 BLACKLISTED_FIELDS = set(['attributes'])
 
