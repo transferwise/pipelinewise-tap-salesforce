@@ -6,11 +6,11 @@ with open('README.md') as f:
       long_description = f.read()
 
 setup(name='pipelinewise-tap-salesforce',
-      version='1.0.1',
+      version='1.1.0',
       description='Singer.io tap for extracting data from the Salesforce API - PipelineWise compatible',
       long_description=long_description,
       long_description_content_type='text/markdown',  # This is important!
-      author='Stitch',
+      author='TransferWise',
       url='https://github.com/transferwise/pipelinewise-tap-salesforce',
       classifiers=[
           'License :: OSI Approved :: GNU Affero General Public License v3',
