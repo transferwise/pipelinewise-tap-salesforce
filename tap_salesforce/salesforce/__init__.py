@@ -129,7 +129,7 @@ def log_backoff_attempt(details):
     LOGGER.info("ConnectionError detected, triggering backoff: %d try", details.get("tries"))
 
 
-def field_to_property_schema(field, mdata):
+def field_to_property_schema(field, mdata): # pylint: disable=too-many-branches
     property_schema = {}
 
     field_name = field['name']
@@ -253,7 +253,8 @@ class Salesforce():
                                                            percent_used_from_total,
                                                            self.quota_percent_total)
             raise TapSalesforceQuotaExceededException(total_message)
-        elif self.rest_requests_attempted > max_requests_for_run:
+
+        if self.rest_requests_attempted > max_requests_for_run:
             partial_message = ("This replication job has made {} REST requests ({:3.2f}% of " +
                                "total quota). Terminating replication due to allotted " +
                                "quota of {}% per replication.").format(self.rest_requests_attempted,
