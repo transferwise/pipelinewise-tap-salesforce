@@ -77,7 +77,8 @@ class Bulk():
                                                            percent_used,
                                                            self.sf.quota_percent_total)
             raise TapSalesforceQuotaExceededException(total_message)
-        elif self.sf.jobs_completed > max_requests_for_run:
+
+        if self.sf.jobs_completed > max_requests_for_run:
             partial_message = ("This replication job has completed {} Bulk API jobs ({:3.2f}% of " +
                                "total quota). Terminating replication due to allotted " +
                                "quota of {}% per replication.").format(self.sf.jobs_completed,
