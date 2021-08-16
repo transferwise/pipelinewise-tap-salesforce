@@ -24,17 +24,14 @@ installation instructions for [Mac](http://docs.python-guide.org/en/latest/start
 It's recommended to use a virtualenv:
 
 ```bash
-  python3 -m venv venv
-  pip install pipelinewise-tap-salesforce
+      python3 -m venv venv
+      pip install pipelinewise-tap-salesforce
 ```
 
 or
 
 ```bash
-  python3 -m venv venv
-  . venv/bin/activate
-  pip install --upgrade pip
-  pip install .
+  make venv
 ```
 
 ### Create a Config file
@@ -60,18 +57,24 @@ The `api_type` is used to switch the behavior of the tap between using Salesforc
 
 To run discovery mode, execute the tap with the config file.
 
-```
-> tap-salesforce --config config.json --discover > properties.json
+```bash
+ tap-salesforce --config config.json --discover > properties.json
 ```
 
 ## Sync Data
 
 To sync data, select fields in the `properties.json` output and run the tap.
 
-```
-> tap-salesforce --config config.json --properties properties.json [--state state.json]
+```bash
+ tap-salesforce --config config.json --properties properties.json [--state state.json]
 ```
 
----
+## Linting
 
-Based on Stitch documentation
+```bash
+    make venv pylint
+```
+
+## Licence
+
+GNU AFFERO GENERAL PUBLIC [LICENSE](./LICENSE)
