@@ -3,7 +3,7 @@
 from setuptools import setup
 
 with open('README.md') as f:
-      long_description = f.read()
+    long_description = f.read()
 
 setup(name='pipelinewise-tap-salesforce',
       version='1.1.0',
@@ -22,15 +22,21 @@ setup(name='pipelinewise-tap-salesforce',
           'pipelinewise-singer-python==1.*',
           'xmltodict==0.11.0'
       ],
+      extras_require={
+          'test': [
+              'pylint==2.9.*',
+          ]
+      },
+      python_requires='>=3.6',
       entry_points='''
           [console_scripts]
           tap-salesforce=tap_salesforce:main
       ''',
       packages=['tap_salesforce', 'tap_salesforce.salesforce'],
-      package_data = {
+      package_data={
           'tap_salesforce/schemas': [
               # add schema.json filenames here
           ]
       },
       include_package_data=True,
-)
+      )
