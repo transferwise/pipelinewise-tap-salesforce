@@ -24,7 +24,7 @@ setup(name='pipelinewise-tap-salesforce',
       ],
       extras_require={
           'test': [
-              'pylint==2.9.*',
+              'pylint>=2.9,<2.13',
           ]
       },
       python_requires='>=3.6',
